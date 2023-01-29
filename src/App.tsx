@@ -36,15 +36,18 @@ type typeBoardData = {
 
 function App() {
   const [list, setList] = useLocalStorage("BoardData", boardData);
-  console.log(list, "hii", boardData);
-  const [loading, setLoading] = useState(true);
+  const [isLogged, setLogged] = useLocalStorage("isLogged", false);
+  const [loginData, setLoginData] = useLocalStorage("LoginData", {
+    imgURL: "",
+    value: "",
+    label: "",
+    password: "",
+  });
   const [deleted, setDeleted] = useState(true);
 
   const [createBoardVisible, setCreateBoardVisible] =
     React.useState<boolean>(false);
   const [addCardVisible, setAddCardVisible] = React.useState<string>("NULL");
-
-  const isLogged = true;
 
   const [dragging, setDragging] = useState<number[]>([0, 0]);
 
@@ -74,7 +77,6 @@ function App() {
   const [activeDelete, setActiveDelete] = useState<boolean>(false);
 
   const handleDeleteCard = () => {
-    console.log("delete");
     let tmepData = list;
     tmepData.columns[dragging[1]].cards.splice(dragging[0], 1);
     setDeleted(true);
@@ -83,22 +85,40 @@ function App() {
 
   return (
     <div id="main-container" className=" h-[100vh] w-[100%]  overflow-hidden ">
-      <NavBar setCreateBoardVisible={setCreateBoardVisible} list={list} />
+      <NavBar
+        setCreateBoardVisible={setCreateBoardVisible}
+        list={list}
+        setLogged={setLogged}
+        isLogged={isLogged}
+        loginData={loginData}
+      />
+
       <div
-        className="absolute bottom-0 left-[47%] w-[80px] h-[80px] mb-7  rounded-full flex justify-center items-center cursor-pointer hover:bg-[#e6e6e6]"
+        className="absolute shadow-xl bottom-0 left-[47%] w-[80px] h-[80px] mb-7  rounded-full flex justify-center items-center cursor-pointer hover:bg-[#e6e6e6]"
         style={{
           visibility: deleted ? "hidden" : "visible",
-          backgroundColor: !activeDelete ? "#62bee7" : "red",
+          border: "5px solid",
+          borderColor: !activeDelete ? "#62bee7" : "red",
+          color: !activeDelete ? "#62bee7" : "red",
+          background: "white",
         }}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setActiveDelete(true);
+        }}
+        onDragLeave={() => setActiveDelete(false)}
+        onDrop={() => handleDeleteCard()}
       >
-        <AiOutlineDelete
-          className="text-4xl text-white"
-          onDragOver={(e) => setActiveDelete(true)}
-          onDragLeave={() => setActiveDelete(false)}
-          onDrop={() => console.log("delete")}
-        />
+        <AiOutlineDelete className="text-4xl" />
       </div>
-      {!isLogged && <LoginSignUp />}
+
+      {!isLogged && (
+        <LoginSignUp
+          setLogged={setLogged}
+          setLoginData={setLoginData}
+          loginData={loginData}
+        />
+      )}
       {createBoardVisible && (
         <CreateBoard setCreateBoardVisible={setCreateBoardVisible} />
       )}
@@ -112,7 +132,7 @@ function App() {
         />
       )}
 
-      {isLogged && !loading === false && (
+      {isLogged && (
         <>
           <div
             id="Card-container"
@@ -126,7 +146,7 @@ function App() {
                   onDrop={(event) => drop(event, ColumnIndex)}
                   className="w-[300px] rounded-md shadow-2xl max-h-[90%]   p-[15px] bg-slate-100 "
                 >
-                  <div className="top-0 sticky bg-slate-100 w-[100%]  flex items-center  flex-col h-[50px] justify-between border-b-[2px] border-white">
+                  <div className=" bg-slate-100 w-[100%]  flex items-center  flex-col h-[50px] justify-between border-b-[2px] border-white">
                     <section className=" w-[100%] text-2xl font-bold flex  items-center justify-between">
                       <div>{column.columTitle}</div>
                       <SiAddthis
@@ -153,7 +173,11 @@ function App() {
                               startDrag(event, index, ColumnIndex)
                             }
                           >
-                            <Card cardData={card_} key={index} />
+                            <Card
+                              cardData={card_}
+                              key={index}
+                              ColumnIndex={ColumnIndex}
+                            />
                           </div>
                         );
                       })}

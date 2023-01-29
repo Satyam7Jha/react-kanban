@@ -180,43 +180,43 @@ export const usersInfo: typeUsers[] = [
   {
     imgURL:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "satyam",
+    label: "Satyam Jha",
+    value: "satyam Jha",
+    password: "satyam3221",
+  },
+  {
+    imgURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+    label: "Yash A",
+    value: "Yash",
+    password: "satyam3221",
+  },
+  {
+    imgURL:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+    label: "Shresth",
+    value: "Shresth",
     password: "",
   },
   {
     imgURL:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "Satyam",
+    label: "Mike",
+    value: "Mike",
     password: "",
   },
   {
     imgURL:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "Satyam",
+    label: "Jhon",
+    value: "Jhon",
     password: "",
   },
   {
     imgURL:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "Satyam",
-    password: "",
-  },
-  {
-    imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "Satyam",
-    password: "",
-  },
-  {
-    imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-    label: "Satyam",
-    value: "Satyam",
+    label: "Ben",
+    value: "Ben",
     password: "",
   },
 ];

@@ -17,7 +17,7 @@ const dateFormatter = (date: string) => {
     12: "DEC",
   };
   let d = date.split("-");
-  return `${months[parseInt(d[2])]} ${d[1]},${d[0]}`;
+  return `${months[parseInt(d[1])]} ${d[2]},${d[0]}`;
 };
 
 export default function (cardData: any) {
@@ -38,13 +38,16 @@ export default function (cardData: any) {
             {dateFormatter(cardData.cardData.date)}
           </div>
         </div>
-        <div className="flex flex-row bg-red">
+        <div className="flex flex-row bg-red ">
           {cardData.cardData.tags.map((tag: any, ind: number) => {
             return (
               <div>
                 <img
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title={tag.label}
                   draggable="false"
-                  className="h-[20px] w-[20px]"
+                  className="h-[20px] w-[20px] rounded-full"
                   src={tag.imgURL}
                   alt="IMG"
                 />
@@ -53,6 +56,10 @@ export default function (cardData: any) {
           })}
         </div>
       </section>
+      <div
+        className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-1 mt-2  rounded-md`}
+        style={{ maxWidth: `${25 * (cardData.ColumnIndex + 1)}%` }}
+      ></div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ const AddCard: React.FC<PROPS> = ({
 
     let tempList = list;
 
-    console.log(cardTemp);
+
 
     tempList["columns"][addCardVisible]["cards"].push(cardTemp);
 
@@ -137,7 +137,6 @@ const AddCard: React.FC<PROPS> = ({
         <section className="flex flex-row justify-around items-center mt-[px]">
           <div
             onClick={() => {
-              console.log("close");
               setAddCardVisible("NULL");
             }}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[120px] text-center cursor-pointer"
