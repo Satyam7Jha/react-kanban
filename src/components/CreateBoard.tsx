@@ -48,7 +48,7 @@ export default function CreateBoard(props: PROPS) {
   return (
     <form
       onSubmit={handleCreateBoard}
-      className="bg-white flex flex-col w-[450px] h-[500px] absolute left-[35%] mt-[50px] rounded-lg shadow-xl  p-[10px] "
+      className="bg-white flex flex-col w-[450px] h-[500px] absolute left-[35%] mt-[50px] rounded-lg shadow-xl  p-[10px] z-50 "
     >
       <header className="font-bold text-2xl mt-4  text-center">
         Create Board

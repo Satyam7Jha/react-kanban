@@ -136,6 +136,10 @@ function App() {
         <AiOutlineDelete className="text-4xl" />
       </div>
 
+      {createBoardVisible && (
+        <CreateBoard setCreateBoardVisible={setCreateBoardVisible} />
+      )}
+
       {!isLogged && (
         <LoginSignUp
           setLogged={setLogged}

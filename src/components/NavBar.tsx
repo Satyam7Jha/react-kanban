@@ -55,7 +55,10 @@ export default function NavBar(props: PropsType) {
           className="absolute  right-0 w-[140px] bg-white mr-[18px] mt-[125px]  border-2  cursor-pointer"
           onMouseLeave={() => setMenueModal(false)}
         >
-          <div className=" h-8 pl-4 flex items-center  hover:bg-[#62bee7] hover:text-white font-bold border-b-2">
+          <div
+            className=" h-8 pl-4 flex items-center  hover:bg-[#62bee7] hover:text-white font-bold border-b-2"
+            onClick={() => props.setCreateBoardVisible(true)}
+          >
             Add Board
           </div>
           <div

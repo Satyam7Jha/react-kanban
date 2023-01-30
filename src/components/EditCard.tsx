@@ -73,7 +73,7 @@ const EditCard: React.FC<PROPS> = ({
         className="bg-white w-[25%] h-[50%]  mt-[80px] rounded-lg shadow-2xl min-w-[370px]"
       >
         <header className="flex flex-row items-center justify-center mt-[10px]">
-          <div className=" text-2xl font-bold text-center">Add Card</div>
+          <div className=" text-2xl font-bold text-center">Edit Card</div>
           {/* <div>{addCardVisible}</div> */}
         </header>
         <section className="p-4 gap-2">
