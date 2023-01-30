@@ -150,7 +150,7 @@ export default function NavBar(props: PropsType) {
         </div>
       ) : (
         <div className="border-2 p-[4px] rounded-md h-10 flex flex-row items-center gap-2 cursor-pointer bg-[#62bee7] text-white pr-2 font-bold">
-          Login/SignUp
+          LogIn/SignUp
         </div>
       )}
     </nav>
