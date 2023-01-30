@@ -15,7 +15,7 @@ type typeCard = {
 type typeColumns = {
   cards: typeCard[];
   columTitle: string;
-  limit: boolean;
+  limit: string;
 };
 
 type typeBoardData = {
@@ -46,7 +46,7 @@ export const boardData: typeBoardData = {
         },
       ],
       columTitle: "BackLog",
-      limit: false,
+      limit: "4",
     },
 
     {
@@ -65,98 +65,32 @@ export const boardData: typeBoardData = {
           ],
           taskDes: "something not decided",
           title: "Gear up for Forest!",
+        },
+        {
+          imgURL: "https://wallpapercave.com/wp/wp1868517.jpg",
+          date: "2023-06-05",
+          tags: [
+            {
+              imgURL:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+              label: "Satyam",
+              value: "Satyam",
+              password: "",
+            },
+          ],
+          taskDes: "something not decided",
+          title: "Playing BasketBall!",
         },
       ],
       columTitle: "To-Do",
-      limit: false,
-    },
-    {
-      cards: [
-        {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
-          tags: [
-            {
-              imgURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-              label: "Satyam",
-              value: "Satyam",
-              password: "",
-            },
-          ],
-          taskDes: "something not decided",
-          title: "Gear up for Forest!",
-        },
-        {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
-          tags: [
-            {
-              imgURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-              label: "Satyam",
-              value: "Satyam",
-              password: "",
-            },
-          ],
-          taskDes: "something not decided",
-          title: "Gear up for Forest!",
-        },
-        {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
-          tags: [
-            {
-              imgURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-              label: "Satyam",
-              value: "Satyam",
-              password: "",
-            },
-          ],
-          taskDes: "something not decided",
-          title: "Gear up for Forest!",
-        },
-        {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
-          tags: [
-            {
-              imgURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-              label: "Satyam",
-              value: "Satyam",
-              password: "",
-            },
-          ],
-          taskDes: "something not decided",
-          title: "Gear up for Forest!",
-        },
-        {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
-          tags: [
-            {
-              imgURL:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
-              label: "Satyam",
-              value: "Satyam",
-              password: "",
-            },
-          ],
-          taskDes: "something not decided",
-          title: "Gear up for Forest!",
-        },
-      ],
-      columTitle: "InProgress",
-      limit: false,
+      limit: "false",
     },
 
     {
       cards: [
         {
-          imgURL: "https://wallpapercave.com/dwp2x/wp4546227.jpg",
-          date: "2022-05-05",
+          imgURL: "https://wallpapercave.com/dwp2x/wp3616431.jpg",
+          date: "2023-02-01",
           tags: [
             {
               imgURL:
@@ -167,11 +101,33 @@ export const boardData: typeBoardData = {
             },
           ],
           taskDes: "something not decided",
-          title: "Gear up for Forest!",
+          title: "Playing Games!",
+        },
+      ],
+      columTitle: "InProgress",
+      limit: "10",
+    },
+
+    {
+      cards: [
+        {
+          imgURL: "https://wallpapercave.com/wp/wp7798969.jpg",
+          date: "2022-02-05",
+          tags: [
+            {
+              imgURL:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+              label: "Satyam",
+              value: "Satyam",
+              password: "",
+            },
+          ],
+          taskDes: "something not decided",
+          title: "Home Work!",
         },
       ],
       columTitle: "Done",
-      limit: false,
+      limit: "false",
     },
   ],
 };

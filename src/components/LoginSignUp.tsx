@@ -23,7 +23,7 @@ export default function LoginSignUp(props: any) {
     <div className="left-50 flex justify-center items-center w-[100%] h-[100%]  ">
       <form
         onSubmit={handleLogin}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  w-[400px] mb-[200px] border-t-2"
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  w-[400px] mb-[200px] border-t-"
       >
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -62,7 +62,7 @@ export default function LoginSignUp(props: any) {
             style={{ border: error ? "1px solid red" : "1px solid #e6e6e6" }}
             id="password"
             type="password"
-            placeholder="satyam322"
+            placeholder="satyam3221"
           />
           {error && (
             <p className="text-red-500 font-bold text-xs italic">

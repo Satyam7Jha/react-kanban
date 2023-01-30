@@ -26,7 +26,7 @@ type typeCard = {
 type typeColumns = {
   cards: typeCard[];
   columTitle: string;
-  limit: boolean;
+  limit: string;
 };
 
 type typeBoardData = {
@@ -44,12 +44,11 @@ function App() {
     password: "",
   });
   const [deleted, setDeleted] = useState(true);
-
   const [createBoardVisible, setCreateBoardVisible] =
     React.useState<boolean>(false);
   const [addCardVisible, setAddCardVisible] = React.useState<string>("NULL");
-
   const [dragging, setDragging] = useState<number[]>([0, 0]);
+  const [limitAlert, setLimitAlert] = useState(false);
 
   const startDrag = (
     event: React.DragEvent<HTMLDivElement>,
@@ -64,6 +63,16 @@ function App() {
   };
 
   const drop = (event: React.DragEvent<HTMLElement>, columnNu: number) => {
+    if (list.columns[columnNu].limit !== "false")
+      if (
+        list.columns[columnNu].cards.length >=
+        parseInt(list.columns[columnNu].limit)
+      ) {
+        setLimitAlert(true);
+        setDeleted(true);
+        return;
+      }
+
     let tempData = list;
 
     tempData.columns[columnNu].cards.push(
@@ -71,6 +80,19 @@ function App() {
     );
 
     tempData.columns[dragging[1]].cards.splice(dragging[0], 1);
+
+    tempData.columns[columnNu].cards = tempData.columns[columnNu].cards.sort(
+      (a: any, b: any) => {
+        if (a.date < b.date) {
+          return -1;
+        }
+        if (a.date > b.date) {
+          return 1;
+        }
+        return 0;
+      }
+    );
+
     setList({ ...tempData });
     setDeleted(true);
   };
@@ -131,6 +153,20 @@ function App() {
           list={list}
         />
       )}
+      {limitAlert && (
+        <div
+          className="bg-red-100 absolute rounded-lg py-2 px-6 bottom-0 text-base ml-6 text-red-700 mb-3"
+          role="alert"
+        >
+          Limit Reached
+          <button
+            onClick={() => setLimitAlert(false)}
+            className="bg-red-500 ml-4 hover:bg-red-400  text-white font-bold py-[5px] px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Close
+          </button>
+        </div>
+      )}
 
       {isLogged && (
         <>
@@ -148,12 +184,28 @@ function App() {
                 >
                   <div className=" bg-slate-100 w-[100%]  flex items-center  flex-col h-[50px] justify-between border-b-[2px] border-white">
                     <section className=" w-[100%] text-2xl font-bold flex  items-center justify-between">
-                      <div>{column.columTitle}</div>
+                      <div>
+                        {column.columTitle}
+                        <sub className="text-[#808080]">
+                          {" "}
+                          {column.limit != "false"
+                            ? ` ${column.cards.length}/${column.limit}`
+                            : ""}
+                        </sub>
+                      </div>
+                      <div>{}</div>
+
                       <SiAddthis
                         className="text-2xl cursor-pointer active:text-blue-500"
-                        onClick={() =>
-                          setAddCardVisible(ColumnIndex.toString())
-                        }
+                        onClick={() => {
+                          if (column.limit !== "false") console.log("hii");
+
+                          if (column.cards.length >= parseInt(column.limit)) {
+                            setLimitAlert(true);
+                            return;
+                          }
+                          setAddCardVisible(ColumnIndex.toString());
+                        }}
                       />
                     </section>
                   </div>
@@ -167,6 +219,7 @@ function App() {
                         if (card_ === undefined) return;
                         return (
                           <div
+                            className="cursor-pointer"
                             draggable
                             key={index}
                             onDragStart={(event) =>

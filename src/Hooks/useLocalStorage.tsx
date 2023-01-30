@@ -1,8 +1,8 @@
 import React from "react";
 
 function getSavedValue(key: any, initialValue: any) {
-  const savedValue = JSON.parse(localStorage.getItem(key) || "{}");
-  if (Object.keys(savedValue).length !== 0) return savedValue;
+  const savedValue = JSON.parse(localStorage.getItem(key) || "null");
+  if (savedValue !== "null" && savedValue !== null) return savedValue;
   if (initialValue instanceof Function) return initialValue();
   return initialValue;
 }

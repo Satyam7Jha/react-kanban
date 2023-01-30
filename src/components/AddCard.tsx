@@ -45,8 +45,6 @@ const AddCard: React.FC<PROPS> = ({
 
     let tempList = list;
 
-
-
     tempList["columns"][addCardVisible]["cards"].push(cardTemp);
 
     let tempSortList = tempList["columns"][addCardVisible]["cards"].sort(

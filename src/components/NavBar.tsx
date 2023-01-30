@@ -97,11 +97,11 @@ export default function NavBar(props: PropsType) {
         <div className="felx flex-row bg-red">
           <div className="flex flex-row gap-5 items-center font-bold">
             <BsFillBellFill
-              className="text-2xl cursor-pointer active:text-[#62bee7]"
+              className="text-2xl cursor-pointer active:opacity-50"
               onClick={() => setNotificationModal(!notificationModal)}
             />
             <div
-              className="border-2 p-[4px] rounded-md flex flex-row items-center gap-2 cursor-pointer hover:bg-[#62bee7] hover:text-white pr-2"
+              className="border-2 p-[4px] rounded-md flex flex-row items-center gap-2 cursor-pointer hover:bg-[#62bee7] hover:text-white pr-2 min-w-[140px]"
               onClick={() => setMenueModal(!menueModal)}
               style={{
                 backgroundColor: menueModal ? "#62bee7" : "",
