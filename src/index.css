@@ -5,11 +5,15 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+nav{
+  background-image: url("https://wallpapercave.com/dwp1x/wp10641971.jpg");
+
+}
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 body {
   margin: 0;
@@ -19,6 +23,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  background-image: url("https://wallpapercave.com/dwp1x/wp10641971.jpg");
+  overflow: hidden ;
 }
 
 code {

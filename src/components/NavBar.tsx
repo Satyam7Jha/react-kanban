@@ -107,7 +107,7 @@ export default function NavBar(props: PropsType) {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       title={item.label}
-                      className="w-8 h-8 rounded-full"
+                      className="w-8 h-8 rounded-full border-2"
                       src={item.imgURL}
                     />
                   </span>
@@ -133,7 +133,7 @@ export default function NavBar(props: PropsType) {
               onClick={() => setNotificationModal(!notificationModal)}
             />
             <div
-              className="border-2 p-[4px] rounded-md flex flex-row items-center gap-2 cursor-pointer hover:bg-[#62bee7] hover:text-white pr-2 min-w-[140px]"
+              className="border-2 p-[4px] rounded-md flex flex-row bg-white items-center gap-2 cursor-pointer hover:bg-[#62bee7] hover:text-white pr-2 min-w-[140px]"
               onClick={() => setMenueModal(!menueModal)}
               style={{
                 backgroundColor: menueModal ? "#62bee7" : "",
@@ -150,7 +150,7 @@ export default function NavBar(props: PropsType) {
         </div>
       ) : (
         <div className="border-2 p-[4px] rounded-md h-10 flex flex-row items-center gap-2 cursor-pointer bg-[#62bee7] text-white pr-2 font-bold">
-          Loing/SignUp
+          Login/SignUp
         </div>
       )}
     </nav>
