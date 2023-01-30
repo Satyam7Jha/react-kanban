@@ -96,30 +96,33 @@ export default function NavBar(props: PropsType) {
           />
           <span className="text-lg font-bold text-white">KanBan</span>
         </div>
-        <div className="flex flex-row items-center">
-          <>
-            {usersInfo.map((item) => {
-              return (
-                <span>
-                  <img
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    title={item.label}
-                    className="w-8 h-8 rounded-full"
-                    src={item.imgURL}
-                  />
-                </span>
-              );
-            })}
 
-            <span>
-              <img
-                src="https://icons.veryicon.com/png/o/internet--web/55-common-web-icons/add-43.png"
-                className="w-8 h-8 rounded-full"
-              />
-            </span>
-          </>
-        </div>
+        {props.isLogged && (
+          <div className="flex flex-row items-center">
+            <>
+              {usersInfo.map((item) => {
+                return (
+                  <span>
+                    <img
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title={item.label}
+                      className="w-8 h-8 rounded-full"
+                      src={item.imgURL}
+                    />
+                  </span>
+                );
+              })}
+
+              <span>
+                <img
+                  src="https://icons.veryicon.com/png/o/internet--web/55-common-web-icons/add-43.png"
+                  className="w-8 h-8 rounded-full"
+                />
+              </span>
+            </>
+          </div>
+        )}
       </div>
 
       {props.isLogged ? (
