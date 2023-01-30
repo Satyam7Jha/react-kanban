@@ -142,28 +142,28 @@ export const usersInfo: typeUsers[] = [
   },
   {
     imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+      "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png",
     label: "Yash A",
     value: "Yash",
     password: "satyam3221",
   },
   {
     imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-WUx40RcbMrWzkDttvsv2_JkDqm0UezjQWw&usqp=CAU",
     label: "Shresth",
     value: "Shresth",
     password: "",
   },
   {
     imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz1GSCtlLeC8W0kH9FnaxzVpjDy8UxtFnJiBEyNCLAul9ol_grDYGTCSS1rUhhm7GjCWQ&usqp=CAU",
     label: "Mike",
     value: "Mike",
     password: "",
   },
   {
     imgURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyuq5iI30Yo3TwJF-Sr5PJz0KZLImVddlRw&usqp=CAU",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9inRqaFfeNmYbm_Z_AwaICGOVqcRE-Of5Lw&usqp=CAU",
     label: "Jhon",
     value: "Jhon",
     password: "",
