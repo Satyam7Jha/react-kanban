@@ -56,10 +56,13 @@ export default function (cardData: any) {
           })}
         </div>
       </section>
-      <div
-        className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-1 mt-2  rounded-md`}
-        style={{ maxWidth: `${25 * (cardData.ColumnIndex + 1)}%` }}
-      ></div>
+
+      <div className="border-2 mt-2 rounded-lg">
+        <div
+          className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-1  rounded-md`}
+          style={{ maxWidth: `${25 * (cardData.ColumnIndex + 1)}%` }}
+        ></div>
+      </div>
     </div>
   );
 }
