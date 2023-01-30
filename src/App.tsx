@@ -9,6 +9,7 @@ import AddCard from "./components/AddCard";
 import { boardData } from "./components/Data";
 import useLocalStorage from "./Hooks/useLocalStorage";
 import { AiOutlineDelete } from "react-icons/ai";
+import EditCard from "./components/EditCard";
 type typeUsers = {
   imgURL: string;
   value: string;
@@ -49,6 +50,7 @@ function App() {
   const [addCardVisible, setAddCardVisible] = React.useState<string>("NULL");
   const [dragging, setDragging] = useState<number[]>([0, 0]);
   const [limitAlert, setLimitAlert] = useState(false);
+  const [editCardVisible, setEditCardVisible] = React.useState<any>("NULL");
 
   const startDrag = (
     event: React.DragEvent<HTMLDivElement>,
@@ -153,6 +155,16 @@ function App() {
           list={list}
         />
       )}
+
+      {editCardVisible !== "NULL" && (
+        <EditCard
+          setEditCardVisible={setEditCardVisible}
+          editCardVisible={editCardVisible}
+          setList={setList}
+          list={list}
+        />
+      )}
+
       {limitAlert && (
         <div
           className="bg-red-100 absolute rounded-lg py-2 px-6 bottom-0 text-base ml-6 text-red-700 mb-3"
@@ -222,6 +234,12 @@ function App() {
                             className="cursor-pointer"
                             draggable
                             key={index}
+                            onClick={() =>
+                              setEditCardVisible({
+                                column: ColumnIndex,
+                                card: index,
+                              })
+                            }
                             onDragStart={(event) =>
                               startDrag(event, index, ColumnIndex)
                             }
